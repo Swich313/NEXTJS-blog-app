@@ -6,9 +6,9 @@ const nextConfig = (phase, {defaultConfig}) => {
     return {
       reactStrictMode: true,
       env: {
-        mongoDB_username: 'Swich313',
-        mongoDB_password: 'Heisen313berg',
-        mongoDB_cluster: 'cluster0.9uteo.mongodb.net',
+        mongoDB_username: 'username',
+        mongoDB_password: 'password',
+        mongoDB_cluster: 'cluster',
         mongoDB_database: 'blog-dev'
       }
     }
@@ -17,9 +17,9 @@ const nextConfig = (phase, {defaultConfig}) => {
   return {
     reactStrictMode: true,
     env: {
-      mongoDB_username: 'Swich313',
-      mongoDB_password: 'Heisen313berg',
-      mongoDB_cluster: 'cluster0.9uteo.mongodb.net',
+      mongoDB_username: 'username',
+      mongoDB_password: 'password',
+      mongoDB_cluster: 'cluster',
       mongoDB_database: 'blog'
     }
   }

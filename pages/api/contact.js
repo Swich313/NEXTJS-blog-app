@@ -14,8 +14,8 @@ const handler = async (req, res) => {
         const newMessage = {email, name, message};
         let client;
         try {
-            const db_path = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@${process.env.mongoDB_cluster}/${process.env.mongoDB_database}?retryWrites=true&w=majority`;
-            client = await MongoClient.connect(db_path);
+            // const db_path = `mongodb+srv://${process.env.mongoDB_username}:${process.env.mongoDB_password}@${process.env.mongoDB_cluster}/${process.env.mongoDB_database}?retryWrites=true&w=majority`;
+            client = await MongoClient.connect(process.env.DB_CONNECTION);
         } catch (e) {
             res.status(500).json({message: 'Could not connect to DB!'});
             return;
