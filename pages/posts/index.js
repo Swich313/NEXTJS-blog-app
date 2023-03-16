@@ -1,8 +1,7 @@
 import Head from 'next/head';
 
-import Hero from '../components/HomePage/Hero';
-import FeaturedPosts from "@/components/HomePage/FeaturedPosts";
-import {getFeaturedPosts} from "@/lib/posts-util";
+import AllPosts from '../../components/Posts/AllPosts';
+import {getAllPosts} from "@/lib/posts-util";
 
 // const DUMMY_POSTS = [
 //     {
@@ -28,27 +27,24 @@ import {getFeaturedPosts} from "@/lib/posts-util";
 //     },
 // ];
 
-const HomePage = props => {
-  return (
-      <>
-          <Head>
-              <title>Andrew Blog</title>
-              <meta name="description" content="I post about programming and web development"/>
-          </Head>
-        <Hero />
-        <FeaturedPosts posts={props.posts}/>
-      </>
-  );
+
+const AllPostsPage = props => {
+    return (<>
+        <Head>
+            <title>All posts</title>
+            <meta name="description" content="A list of all programming-related tutorials and posts!"/>
+        </Head>
+        <AllPosts posts={props.posts}/>
+    </>);
 };
 
 export function getStaticProps(){
-    const featuredPosts = getFeaturedPosts();
-
+    const allPosts = getAllPosts();
     return {
         props: {
-            posts: featuredPosts
+            posts: allPosts,
         }
     }
 }
 
-export default HomePage;
+export default AllPostsPage;
